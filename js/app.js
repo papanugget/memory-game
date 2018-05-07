@@ -1,6 +1,15 @@
 /*
  * Create a list that holds all of your cards
  */
+// let cardParents = [];
+// cardParents = document.querySelectorAll(".card");
+
+let cards = [];
+cards = document.querySelectorAll('.card');
+
+for(let i = 0; i < cards.length; i++){
+    console.log(cards[i].childNodes[1]);
+}
 
 
 /*
