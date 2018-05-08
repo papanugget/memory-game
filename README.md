@@ -39,8 +39,6 @@ Project Rubric:
 **Suggestions to Make Your Project Stand Out!**
 
 
--Add CSS animations when cards are clicked, unsuccessfully matched, and successfully matched.
-
--Add unique functionality beyond the minimum requirements (Implement a leaderboard, store game state using local storage, etc.)
-
--Implement additional optimizations that improve the performance and user experience of the game (keyboard shortcuts for gameplay, etc).
+- Add CSS animations when cards are clicked, unsuccessfully matched, and successfully matched.
+- Add unique functionality beyond the minimum requirements (Implement a leaderboard, store game state using local storage, etc.)
+- Implement additional optimizations that improve the performance and user experience of the game (keyboard shortcuts for gameplay, etc).
