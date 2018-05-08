@@ -1,17 +1,50 @@
 /*
  * Create a list that holds all of your cards
  */
-// let cardParents = [];
-// cardParents = document.querySelectorAll(".card");
 
-let cards = [];
-cards = document.querySelectorAll('.card');
+// let cards = [];
+// //select card elements
+// cards = document.querySelectorAll('.card')
+//init empty array for i class values
 
-for(let i = 0; i < cards.length; i++){
-    console.log(cards[i].childNodes[1]);
+//loop thru cards and select i class values and push into empty array
+
+    // console.log(cardItems);
+
+//would it be easier to just have a hard coded array to hold the i class values?
+const cardArr = ["fa fa-bicycle", "fa fa-bolt", "fa fa-bomb", "fa fa-paper-plane-o", "fa fa-bomb", "fa fa-bolt", "fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o", "fa fa-bicycle", "fa fa-cube", "fa fa-cube", "fa fa-anchor", "fa fa-leaf", "fa fa-leaf", "fa fa-anchor"];
+
+function buildCards(){
+    //clear icons by selecting cards
+    //init empty array to hold card elements
+    let cards = [];
+    //select card elements
+    cards = document.querySelectorAll('.card');
+    //loop thru cards and remove icons
+    for(let i = 0; i < cards.length; i++){
+        cards[i].innerHTML = '';
+        // //shuffle hardcoded cardArr
+        shuffle(cardArr);
+        //loop thru shuffed card array
+        for(let j = 0; j < cardArr.length; j++){
+            //each card will have new card icon
+            //build html using template literals
+            //insert them into each card element
+            cards[i].innerHTML = `<i class="${cardArr[j]}"></i>`;
+        }
+        console.table(cards);
+    }
+    
+    // console.log(cardArr);
+    //loop thru shuffled array
+    // cardArr.forEach((icon) => {
+    //     // console.log(icon);
+    //     output = `<i class="${icon}></i>"`
+    //     for(let j = 0; j < cards.length; j++){
+    //         cards[j].innerHTML += output;
+    //     }
+    // });
 }
-
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -34,7 +67,7 @@ function shuffle(array) {
     return array;
 }
 
-
+buildCards();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
