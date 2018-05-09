@@ -3,7 +3,7 @@
  */
 
 //would it be easier to just have a hard coded array to hold the i class values?
-const cardArr = ["fa fa-bicycle", "fa fa-bolt", "fa fa-bomb", "fa fa-paper-plane-o", "fa fa-bomb", "fa fa-bolt", "fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o", "fa fa-bicycle", "fa fa-cube", "fa fa-cube", "fa fa-anchor", "fa fa-leaf", "fa fa-leaf", "fa fa-anchor"];
+const iconArr = ["fa fa-bicycle", "fa fa-bolt", "fa fa-bomb", "fa fa-paper-plane-o", "fa fa-bomb", "fa fa-bolt", "fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o", "fa fa-bicycle", "fa fa-cube", "fa fa-cube", "fa fa-anchor", "fa fa-leaf", "fa fa-leaf", "fa fa-anchor"];
 
 // function buildCards(){
 //     //init empty array to hold card elements
@@ -26,44 +26,19 @@ const cardArr = ["fa fa-bicycle", "fa fa-bolt", "fa fa-bomb", "fa fa-paper-plane
 //     }
 // }
 function buildCards(){
+    //select card class elements
     let cards = document.querySelectorAll('.card');
     // console.log(cards);
-    //loop thru shuffled cardArr
-    for(let i = 0; i < cardArr.length; i++){
+    //loop thru shuffled iconArr
+    for(let i = 0; i < iconArr.length; i++){
         //clear icons
         cards[i].innerHTML = '';
-        //set card icons with each from shuffled cardArr
-        cards[i].innerHTML = `<i class="${cardArr[i]}"></i>`;
+        //set card icons with each from shuffled iconArr
+        cards[i].innerHTML = `<i class="${iconArr[i]}"></i>`;
     }
     // console.log(cards);
 }       
-//     console.log(cards);
-    
-//     // console.log(cardArr);
-//     //loop thru shuffled array
-//     // cardArr.forEach((icon) => {
-//     //     // console.log(icon);
-//     //     output = `<i class="${icon}></i>"`
-//     //     for(let j = 0; j < cards.length; j++){
-//     //         cards[j].innerHTML += output;
-//     //     }
-//     // });
-// }
 
-//rebuild buildCards function with forEach loops
-// function buildCards(){
-//     let cards = [];
-//     shuffle(cardArr);
-//     console.table(cardArr);
-//     cards = document.querySelectorAll('.card');
-//     cards.forEach((card) => {
-//        card.innerHTML = '';
-//         cardArr.forEach((icon) => {
-//         card.innerHTML += `<i class="${icon}"></i>`;
-//         });
-//     });  
-//     console.log(cards);  
-// }
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -86,11 +61,20 @@ function shuffle(array) {
     return array;
 }
 // //shuffle hardcoded cardArr
-shuffle(cardArr);
-console.log(cardArr);
+shuffle(iconArr);
+// console.log(cardArr);
 //randomize card icon positions on page load
 buildCards();
 
+//select deck element
+const deck = document.querySelector('.deck');
+//add event listener to deck
+deck.addEventListener('click', showIcon);
+
+//change CSS class for each card click
+function showIcon(card){
+    console.log(card.target);
+};
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
