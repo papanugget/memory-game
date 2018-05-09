@@ -73,7 +73,20 @@ deck.addEventListener('click', showIcon);
 
 //change CSS class for each card click
 function showIcon(card){
-    console.log(card.target);
+    // console.log(card.target.classList);
+    //if else logic to account for card clicks only
+    if(card.target.classList == "card"){
+        //show icon when clicked
+        card.target.classList.toggle('open');
+        card.target.classList.toggle('show');
+        openCardList(card.target.childNodes[0].classList.value);
+    }
+};
+const cardList = [];
+//add open card to list
+function openCardList(card){
+    cardList.push(card);
+    return cardList;
 };
 /*
  * set up the event listener for a card. If a card is clicked:
