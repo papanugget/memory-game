@@ -14,7 +14,7 @@ const stars = document.querySelectorAll('.fa-star');
 const reset = document.querySelector('.restart');
 const modal = document.querySelector('#victory');
 const restart = document.querySelectorAll('.restart');
-const youWin = new Audio('./snd/yaywav.mp3');
+const youWin = new Audio('./master/snd/yaywav.mp3');
 // const close = document.querySelector('.close');
 /*
  * Display the cards on the page ✔️
