@@ -132,7 +132,13 @@ function gameVictory(){
             starsList.innerHTML += '<i class="fa fa-star"></i>';
         }
     }
-    youWin.play();
+    youWin.play()
+        .then(() => {
+            console.log('played');
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 function closeModal(){
     modal.style.display = 'none';
