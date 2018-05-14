@@ -151,9 +151,6 @@ h1 {
     animation-name: zoomIn;
     animation-duration: 0.75s;
 }
-.modal .starsList{
-  
-}
 .modal-content {
     /* background-color: #fff; */
     width: 35%;
@@ -181,7 +178,7 @@ h1 {
   background-color: #ffbb33;
 }
 .modal .button.close:hover, .button.close:focus{
-  background-color: #FF8800;
+  background-color: #ff8800;
   cursor: pointer;
 }
 /* animations from animate.css */
@@ -254,7 +251,6 @@ h1 {
       transform: perspective(400px);
     }
   }
-  
   @keyframes flipInY {
     from {
       -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -368,7 +364,6 @@ h1 {
       transform: scale3d(1, 1, 1);
     }
   }
-  
   @keyframes tada {
     from {
       -webkit-transform: scale3d(1, 1, 1);
@@ -422,41 +417,5 @@ h1 {
   
     50% {
       opacity: 1;
-    }
-  }
-  
-  .zoomIn {
-    -webkit-animation-name: zoomIn;
-    animation-name: zoomIn;
-  }
-  @-webkit-keyframes zoomOut {
-    from {
-      opacity: 1;
-    }
-  
-    50% {
-      opacity: 0;
-      -webkit-transform: scale3d(0.3, 0.3, 0.3);
-      transform: scale3d(0.3, 0.3, 0.3);
-    }
-  
-    to {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes zoomOut {
-    from {
-      opacity: 1;
-    }
-  
-    50% {
-      opacity: 0;
-      -webkit-transform: scale3d(0.3, 0.3, 0.3);
-      transform: scale3d(0.3, 0.3, 0.3);
-    }
-  
-    to {
-      opacity: 0;
     }
   }
