@@ -14,7 +14,7 @@ const stars = document.querySelectorAll('.fa-star');
 const reset = document.querySelector('.restart');
 const modal = document.querySelector('#victory');
 const restart = document.querySelectorAll('.restart');
-const youWin = new Audio('./master/snd/yaywav.mp3');
+const youWin = new Audio('https://learn.parallax.com/sites/default/files/content/Reference/SoundLib/yay.wav');
 // const close = document.querySelector('.close');
 /*
  * Display the cards on the page ✔️
