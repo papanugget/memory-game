@@ -6,9 +6,13 @@ const iconArr = ["fa fa-bicycle", "fa fa-bolt", "fa fa-bomb", "fa fa-paper-plane
 let openCardList = [];
 let matchCardList = [];
 let clicks = 0;
+let minutes = 0;
+let seconds = 0;
+let time;
 const deck = document.querySelector('.deck');
 const cards = document.querySelectorAll('.card');
 const moves = document.querySelectorAll('.moves');
+const clock = document.getElementsByClassName('clock')[0];
 const score = document.querySelector('.stars');
 const stars = document.querySelectorAll('.fa-star');
 const reset = document.querySelector('.restart');
@@ -34,7 +38,7 @@ for(let i = 0; i < restart.length; i++){
 function cardClick(card){
     if(card.target.className === 'card'){
             showIcon(card);
-            openCard(card);
+            openCard(card); 
     }
 }
 function showIcon(card){
@@ -60,6 +64,10 @@ function clickCounter(){
         moves[i].innerHTML = clicks;
     }
     // console.log(clicks);
+    //start the clock on first move
+    if(clicks == 1){
+        startClock();
+    }
     //rate performance based on number of completed moves
     if(clicks > 8 && clicks < 15) {
         for(let i = 0; i < 3; i++){
@@ -74,6 +82,20 @@ function clickCounter(){
             }
         }
     }
+}
+function startClock(){
+    time = setInterval(() => {
+        clock.innerHTML = `${minutes} mins ${seconds} secs`;
+        seconds++;
+        if(seconds === 60){
+            minutes++;
+            seconds = 0;
+        }
+        if(minutes === 60){
+            hour++;
+            minutes = 0;
+        }
+    }, 1000);
 }
 function matchCard(arr){      
     //lock matched cards in matched state
@@ -127,11 +149,18 @@ function gameVictory(){
     modal.style.display = 'block'; 
     //show star performance
     for(let i = 0; i < 3; i++){
-        let starsList = document.querySelector('.starsList');
+        let starsList = document.querySelector('.stars-list');
         if(score.children[i].style.display != "none"){
             starsList.innerHTML += '<i class="fa fa-star"></i>';
         }
     }
+    //stop timer
+    clearInterval(time);
+    //show time
+    let finalTime = document.querySelector('.final-time');
+    // console.log(finalTime);
+    finalTime.innerHTML = clock.innerHTML;
+    //play sound
     youWin.play()
         .then(() => {
             console.log('played');
@@ -154,6 +183,9 @@ function resetGame(){
     for(let i = 0; i < 3; i++){
         score.children[i].style.display = '';
     }
+    //clear clock
+    clock.innerHTML = '0 mins 0 secs';
+    clearInterval(time);
     //clear arrays
     clearArr(openCardList);
     clearArr(matchCardList);
