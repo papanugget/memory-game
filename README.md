@@ -2,6 +2,11 @@
 
 Udacity Project Create A Memory Match Game
 
+**Dependencies**
+- some animate.css animations
+- congratulatory sound file plays
+
+
 Project Rubric: 
 
 **Game Behavior**
