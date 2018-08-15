@@ -2,6 +2,8 @@
 
 Udacity Project Create A Memory Match Game
 
+[Click here to see it in action](https://papanugget.github.io/memory-game/)
+
 **Dependencies**
 - some animate.css animations
 - congratulatory sound file plays
